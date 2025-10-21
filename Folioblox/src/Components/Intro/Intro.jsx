@@ -1,19 +1,29 @@
 import Hero from '../../assets/Heroimage.jpg'
 import Navbar from '../Navbar/Navbar'
+import { motion } from 'framer-motion'
 
 const Intro = () => {
   return (
     <div
       className='bg- h-[95vh] bg-no-repeat bg-cover bg-center rounded-b-[70px]'
-      style={{backgroundImage:`URL(${Hero})`}}>
+      style={{ backgroundImage: `URL(${Hero})` }}>
 
       <Navbar />
-      
-      <div className="flex justify-between mt-24 px-16">
 
+      <div className="flex justify-between mt-24 px-16">
         <div className="w-[33vw] flex flex-col gap-8">
-          <h4 className='text-green-600 font-nunito text-2xl font-extrabold text-shadow-2xs text-shadow-black/50'>Hey, I'm Lilly,</h4>
-          <h1 className='text-white text-[80px] font-extrabold text-shadow-xs text-shadow-black font-nunito leading-24'>Interior Designer</h1>
+
+          <h4 className='text-green-600 font-nunito text-2xl font-extrabold text-shadow-2xs 
+          text-shadow-black/50'>
+            Hey, I'm Lilly,
+          </h4>
+
+          <motion.h1
+            initial={{ opacity: 0, x: -300 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: 'easeIn' }}
+            className='text-white text-[80px] font-extrabold text-shadow-xs text-shadow-black font-nunito leading-24'>
+            Interior Designer</motion.h1>
         </div>
 
         <div className="w-[33vw] flex flex-col justify-end gap-4">
@@ -25,8 +35,8 @@ const Intro = () => {
       </div>
 
       
-      
-      
+
+
     </div>
   )
 }

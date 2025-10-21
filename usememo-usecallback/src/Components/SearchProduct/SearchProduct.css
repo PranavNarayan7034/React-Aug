@@ -1,0 +1,12 @@
+.page{
+    position: relative;
+}
+.items{
+    background-color: yellow;
+    max-height: 200px;
+    width: 100%;
+    position: absolute;
+}
+.items.scroll{
+    overflow-y: scroll;
+}
