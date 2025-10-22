@@ -1,7 +1,8 @@
-import React, { useMemo, useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 import MemoComp from './Components/MemoComp'
 import SearchProduct from './Components/SearchProduct/SearchProduct'
 import CartCalculator from './Components/CartCalulator/CartCalculator'
+import CallbackComp from './Components/CallbackComp/CallbackComp'
 
 const App = () => {
   const [count, setCount] = useState(0)
@@ -24,6 +25,14 @@ const App = () => {
   },[newCount])
   console.log("App component Rendered")
 
+  // const onBtnclick = () => {
+  //   console.log("Buttton clicked")
+  // }
+
+  const onBtnclick = useCallback(() => {
+    console.log("Button clicked")
+  },[])
+
   return (
     <div>
       <MemoComp newcount={newCount} User={user}/>
@@ -35,7 +44,9 @@ const App = () => {
       <hr/>
       <SearchProduct />
       <hr />
-      <CartCalculator/>
+      <CartCalculator />
+      <hr />
+      <CallbackComp handleClick={onBtnclick} newcount={newCount}/>
     </div>
   )
 }
