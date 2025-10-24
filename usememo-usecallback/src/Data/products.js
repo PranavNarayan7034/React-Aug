@@ -8,31 +8,31 @@ const products = [
     "id": 1,
     "name": "Wireless Headphones",
     "price": 1999,
-    "image": Speaker
+    "image": Headphone
   },
   {
     "id": 2,
     "name": "Smart Watch",
     "price": 3499,
-    "image": Mouse
+    "image": Watch
   },
   {
     "id": 3,
     "name": "Bluetooth Speaker",
     "price": 2499,
-    "image": Keyboard
+    "image": Speaker
   },
   {
     "id": 4,
     "name": "Gaming Mouse",
     "price": 1299,
-    "image": Watch
+    "image": Mouse
   },
   {
     "id": 5,
     "name": "Mechanical Keyboard",
     "price": 2999,
-    "image": Headphone
+    "image": Keyboard
   }
 ]
 export default products

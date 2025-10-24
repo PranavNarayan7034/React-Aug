@@ -3,7 +3,7 @@
 }
 .products{
     display: grid;
-    grid-template-columns: repeat(3,auto);
+    grid-template-columns: repeat(4,auto);
     gap: 2rem;
 }
 .item{
@@ -34,8 +34,6 @@
     border-radius: 5px;
 }
 .btn button:nth-child(1){
-    background-color: red;
-}
+    background-color: red;}
 .btn button:nth-child(2){
-    background-color: blue;
-}
+    background-color: blue;}
