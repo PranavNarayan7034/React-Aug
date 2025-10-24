@@ -5,6 +5,7 @@ import CartCalculator from './Components/CartCalulator/CartCalculator'
 import CallbackComp from './Components/CallbackComp/CallbackComp'
 import TodoList from './Components/TodoList/TodoList'
 import Usereducer from './Components/Usereducer/Usereducer'
+import Products from './Components/Products/Products'
 
 const App = () => {
   const [count, setCount] = useState(0)
@@ -27,22 +28,26 @@ const App = () => {
 
   return (
     <div>
-      <MemoComp newcount={newCount} User={user}/>
-      <hr/>
-      <h3>Count : {count}</h3>
-      <h3>CartCount : {newCount}</h3>
-      <button onClick={onHandleClick}>Increment</button>
-      <button onClick={onButtonClick}>AddValue</button>
-      <hr/>
+      {/* <MemoComp newcount={newCount} User={user}/> */}
+      {/* <hr/> */}
+      {/* <h3>Count : {count}</h3> */}
+      {/* <h3>CartCount : {newCount}</h3> */}
+      {/* <button onClick={onHandleClick}>Increment</button> */}
+      {/* <button onClick={onButtonClick}>AddValue</button> */}
+      {/* <hr/> */}
       {/* <SearchProduct /> */}
-      <hr />
+      {/* <hr /> */}
       {/* <CartCalculator /> */}
-      <hr />
-      <CallbackComp handleClick={onBtnclick} newcount={newCount}/>
-      <hr />
-      <TodoList />
-      <hr />
-      <Usereducer/>
+      {/* <hr /> */}
+      {/* <CallbackComp handleClick={onBtnclick} newcount={newCount}/> */}
+      {/* <hr /> */}
+      {/* <TodoList /> */}
+      {/* <hr /> */}
+      {/* <Usereducer/> */}
+
+      <Products/>
+      
+
     </div>
   )
 }
