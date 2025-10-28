@@ -6,6 +6,7 @@ import CallbackComp from './Components/CallbackComp/CallbackComp'
 import TodoList from './Components/TodoList/TodoList'
 import Usereducer from './Components/Usereducer/Usereducer'
 import Products from './Components/Products/Products'
+import Customhook from './Components/Customhooks/Customhook'
 
 const App = () => {
   const [count, setCount] = useState(0)
@@ -45,8 +46,8 @@ const App = () => {
       {/* <hr /> */}
       {/* <Usereducer/> */}
 
-      <Products/>
-      
+      {/* <Products/> */}
+      <Customhook/>
 
     </div>
   )

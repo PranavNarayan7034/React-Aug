@@ -3,7 +3,7 @@
 }
 .products{
     display: grid;
-    grid-template-columns: repeat(4,auto);
+    grid-template-columns: repeat(3,auto);
     gap: 2rem;
 }
 .item{
@@ -15,7 +15,7 @@
     border-radius: 15px;
     overflow: hidden;
     padding: 10px;
-}
+} 
 .item img{
     width: 100%;
     height: 250px;
@@ -26,14 +26,15 @@
     text-transform: capitalize;
     font-size: 22px;
 }
-.btn button{
+.btn{
+    display: flex;
+    align-items: center;
+}
+.btn .button{
     padding: 8px 15px;
     margin: 0 5px;
     color: white;
     border: none;
     border-radius: 5px;
+    background-color: green;
 }
-.btn button:nth-child(1){
-    background-color: red;}
-.btn button:nth-child(2){
-    background-color: blue;}
