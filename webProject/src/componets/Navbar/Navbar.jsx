@@ -2,6 +2,7 @@ import logo from "../../assets/logo.svg"
 import { IoSearchOutline } from "react-icons/io5";
 import { FiUser } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
+import './Navbar.scss'
 
 const Navbar = () => {
     return (
@@ -13,13 +14,11 @@ const Navbar = () => {
                 <span>Home</span>
                 <span>AboutUs</span>
                 <span>Products <IoIosArrowDown /> </span>
-                <span>Services <IoIosArrowDown /> </span>
                 <span>ContactUs</span>
             </div>
             <div className="auth">
                 <IoSearchOutline />
-                <FiUser />
-                <p>Account</p>
+                <p> <FiUser /> Account</p>
             </div>
         </div>
     )
