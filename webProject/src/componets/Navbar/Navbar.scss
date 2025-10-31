@@ -1,32 +1,37 @@
-@import '../../globalsass.scss';
+@use '../../globalsass.scss' as *;
 
 *{
     margin: 0;
     padding: 0;
 }
 .Navbar{
+    position: sticky;
+    top: 0;
     height: 50px;
-    // box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.631);
     border-bottom: 1px solid rgba(0, 0, 0, 0.51);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:0 100px;
+    padding: 0 100px; 
+    @include respond(lg){
+        padding: 0 50px;
+    }
     .navlinks{
         display: flex;
         gap: 1.5rem;
         position: relative;
+        @include respond(md){
+            display: none;
+        }
         span{
             display: flex;
             align-items: center;
             gap: 0.5rem;
             font-size: 18px;
-            // @include font-nunito;
             @include font-nunito(500);
             cursor: pointer;
         }
         .dropdown{
-            // position: relative;
             .dropdown-menu{
                 position: absolute;
                 left: 0;
@@ -45,12 +50,27 @@
         display: flex;
         align-items: center;
         gap: 2rem;
+        @include respond(md){
+            display: none;
+        }
         p{
             display: flex;
             align-items: center;
             gap: 0.3rem;
             font-size: 18px;
             @include font-poppins;
+        }
+        .icon{
+            font-size: 25px;
+        }
+    }
+    .hamburger{
+        display: none;
+        @include respond(md){
+            display: block;
+        }
+        .icon{
+            font-size: 25px;
         }
     }
 }

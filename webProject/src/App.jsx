@@ -1,12 +1,14 @@
 import React from 'react'
 import Navbar from './componets/Navbar/Navbar'
+import { ThemeProvider } from './Context/ThemeContext'
 
 const App = () => {
   return (
-    <div>
+    <ThemeProvider>
       <Navbar />
-      App
-    </div>
+      Home
+     <Footer/>
+    </ThemeProvider>
   )
 }
 
