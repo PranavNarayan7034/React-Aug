@@ -1,0 +1,20 @@
+
+.Hero{
+    border: 1px solid black;
+    height: calc(100vh - 120px);
+    margin: 15px 50px;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .first{
+        padding: 75px 0;
+    }
+    .second{
+        padding: 75px 0;
+    }
+}

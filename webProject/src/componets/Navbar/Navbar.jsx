@@ -13,9 +13,9 @@ import { ThemeContext } from "../../Context/ThemeContext";
 const Navbar = () => {
     const [dropDown, setDropdown] = useState(false)
     const { theme, toggleTheme } = useContext(ThemeContext)
-    console.log("Theme in navbar==", theme)
+    // console.log("Theme in navbar==", theme)
     return (
-        <div className='Navbar'>
+        <div className={`Navbar ${theme}`}>
             <div className="logo">
                 <img src={logo} alt="" />
             </div>
@@ -29,7 +29,7 @@ const Navbar = () => {
                     <span>Products <IoIosArrowDown /> </span>
                     <AnimatePresence>
                         {dropDown && (
-                            <motion.div className="dropdown-menu"
+                            <motion.div className={`dropdown-menu ${theme}`}
                                 initial={{ opacity: 0, y: -100 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -100 }}
