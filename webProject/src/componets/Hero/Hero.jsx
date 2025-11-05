@@ -20,7 +20,7 @@ const Hero = () => {
 
         const interval = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % background.length)
-        }, 4000)
+        }, 5000)
         return () => clearInterval(interval)
 
     }, [])
@@ -28,11 +28,21 @@ const Hero = () => {
 
     return (
         <div className='Hero'
-            style={{backgroundImage: `url(${background[currentSlide]})`}}>
+            style={{ backgroundImage: `url(${background[currentSlide]})` }}>
 
             <div class="first">
                 <h3>Summer Collection</h3>
-                <h1>{Headings[currentSlide]}</h1>
+
+                <AnimatePresence mode='wait'>
+                    <motion.h1
+                        key={currentSlide}
+                        initial={{opacity:0,scale:0}}
+                        animate={{opacity:1,scale:1}}
+                        exit={{opacity:0,scale:0}}
+                        transition={{duration:0.75,ease:"linear"}}
+                    >{Headings[currentSlide]}</motion.h1>
+                </AnimatePresence>
+
             </div>
 
             <div class="second">555555555</div>
