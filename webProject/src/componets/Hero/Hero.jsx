@@ -5,15 +5,18 @@ import Bg1 from '../../assets/Herowallpaper1.jpg'
 import Bg2 from '../../assets/Herowallpaper2.jpg'
 import Bg3 from '../../assets/Herowallpaper3.jpg'
 import Bg4 from '../../assets/Herowallpaper4.jpg'
+import Amiparis from '../../assets/Amiparis.png'
+import Dior from '../../assets/dior.png'
+import Gucci from '../../assets/gucci.png'
+import Lv from '../../assets/lv.png'
 
 const Hero = () => {
 
     const [currentSlide, setCurrentSlide] = useState(0)
 
     const background = [Bg1, Bg2, Bg3, Bg4]
-    const Headings = ['Level up your Style', 'Upgrade Your Vibe',
-        'Elevate Everyday Elegance', 'Discover Refined Style']
-    const brands = ["Brand1", "Brand2", "Brand3", "Brand4"]
+    const Headings = ['Level up your Style', 'Upgrade Your Vibe','Elevate Everyday Elegance', 'Discover Refined Style']
+    const brands = [Amiparis,Gucci,Dior,Lv]
 
     // auto slide for hero page
     useEffect(() => {
@@ -45,7 +48,26 @@ const Hero = () => {
 
             </div>
 
-            <div class="second">555555555</div>
+            <div class="second">
+                <div class="brands">
+                    {brands.map((item, index) => (
+                        <motion.img src={item} alt="" key={index}
+                            animate={{
+                                scale: currentSlide == index ? 1.25 : 1,
+                                y: currentSlide == index ? -20 : 0
+                            }}
+                            transition={{duration:0.25,stiffness:300}}
+                        />
+                    ) )}
+                </div>
+                <p>We ensure our customers have the best shopping experience</p>
+                <div class="indicators">
+                    {background.map((item,index) => (
+                        <button></button>
+                    ))}
+                </div>
+            </div>
+            
         </div>
     )
 }
