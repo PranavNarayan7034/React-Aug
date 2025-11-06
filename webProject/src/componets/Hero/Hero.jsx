@@ -31,9 +31,20 @@ const Hero = () => {
 
     return (
         <div className='Hero'
-            style={{ backgroundImage: `url(${background[currentSlide]})` }}>
+            // style={{ backgroundImage: `url(${background[currentSlide]})` }}
+            style={{
+                backgroundImage:
+                `linear-gradient(rgba(85, 61, 222, 0.168),
+                rgba(85, 61, 222, 0.168)), 
+                url(${background[currentSlide]})`,
 
-            <div class="first">
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition:'center'
+            }}
+        >
+
+            <div className="first">
                 <h3>Summer Collection</h3>
 
                 <AnimatePresence mode='wait'>
@@ -48,8 +59,8 @@ const Hero = () => {
 
             </div>
 
-            <div class="second">
-                <div class="brands">
+            <div className="second">
+                <div className="brands">
                     {brands.map((item, index) => (
                         <motion.img src={item} alt="" key={index}
                             animate={{
@@ -61,9 +72,14 @@ const Hero = () => {
                     ) )}
                 </div>
                 <p>We ensure our customers have the best shopping experience</p>
-                <div class="indicators">
+                <div className="indicators">
                     {background.map((item,index) => (
-                        <button></button>
+                        <button
+                            key={index}
+                            className={`${currentSlide == index
+                                ? "active" : ""}`}
+                            onClick={()=> setCurrentSlide(index)}
+                        ></button>
                     ))}
                 </div>
             </div>
