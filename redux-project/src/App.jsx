@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Home from './components/Home/Home'
 
 const App = () => {
+  
   return (
-    <div>App</div>
+    <div>
+      App
+      <Home/>
+    </div>
   )
 }
 
