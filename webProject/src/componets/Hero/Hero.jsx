@@ -33,11 +33,7 @@ const Hero = () => {
         <div className='Hero'
             // style={{ backgroundImage: `url(${background[currentSlide]})` }}
             style={{
-                backgroundImage:
-                `linear-gradient(rgba(85, 61, 222, 0.168),
-                rgba(85, 61, 222, 0.168)), 
-                url(${background[currentSlide]})`,
-
+                backgroundImage: `linear-gradient(rgba(40, 40, 45, 0.48),rgba(40,40,45, 0.482)), url(${background[currentSlide]})`,
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition:'center'
