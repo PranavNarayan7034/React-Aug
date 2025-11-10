@@ -1,14 +1,25 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { Login ,Logout} from '../../redux/authReducer'
 
 const Button = () => {
 
-  const values = useSelector( (state)=> state.Auth)
-  console.log("Value", values)
+  // const authValues = useSelector( (state)=> state.Auth)
+  // console.log("Auth ==", authValues)
+
+  // const cartValues = useSelector((state) => state.Cart)
+  // console.log("Cart ==", cartValues)
+
+  const { userId, username, isAdmin } = useSelector((state) => state.Auth)
+  // console.log(isAdmin)
+
+  const dispatch = useDispatch()
+
 
   return (
     <div>
-      Button
+      <button onClick={ ()=> dispatch(Login())}> Signin</button>
+      <button onClick={ ()=> dispatch(Logout())}> Logout</button>
     </div>
   )
 }

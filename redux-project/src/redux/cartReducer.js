@@ -11,12 +11,21 @@ const cartSlice = createSlice({
     name: "Cart",
     initialState: INTIALSTATE,
     reducers: {
-        addToCart: () => { },
-        addTowishList: () => { },
+        incrementCount: (state) => {
+            state.cartCount +=1
+        },
+
+        addToCart: (state,action) => {
+            // console.log(action)
+            state.cartItems.push(action.payload)
+        },
+        addTowishList: (state) => {
+        },
+
         placeOrder: () => { }
     }
 })
 
-export const { addToCart, addTowishList, placeOrder } = cartSlice.actions
+export const {incrementCount, addToCart, addTowishList, placeOrder } = cartSlice.actions
 
 export default cartSlice.reducer;
