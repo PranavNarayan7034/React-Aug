@@ -36,4 +36,26 @@
             }
         }
     }
+
+    .btns {
+        display: flex;
+        gap: 1rem;
+
+        button {
+            padding: 8px 15px;
+            font-size: 18px;
+            @include font-nunito;
+            border: none;
+            border-radius: 10px;
+
+            &:nth-child(1) {
+                background-color: rgba(255, 166, 0);
+                color: white;
+            }
+
+            &:nth-child(2) {
+                border: 2px solid rgba(0, 0, 0, 0.665);
+            }
+        }
+    }
 }
