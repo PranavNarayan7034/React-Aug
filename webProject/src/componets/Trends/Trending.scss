@@ -23,6 +23,7 @@
     .options {
         width: 100%;
         display: flex;
+        flex-wrap: wrap-reverse; 
         justify-content: space-around;
 
         span {
@@ -39,7 +40,8 @@
         }
     }
     .products{
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(4,auto);
         gap: 2rem;
     }
 }

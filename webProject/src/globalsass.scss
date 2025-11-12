@@ -53,6 +53,11 @@
             @content;
         }
     }
+    @else if $breakpoint ==xxl {
+        @media (max-width:1400px) {
+            @content;
+        }
+    }
 }
 
 

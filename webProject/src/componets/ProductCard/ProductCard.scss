@@ -56,6 +56,11 @@
             &:nth-child(2) {
                 border: 2px solid rgba(0, 0, 0, 0.665);
             }
+            &.disabled{
+                cursor: no-drop;
+                cursor: not-allowed;
+                background-color: rgba(255,166,0,0.409);
+            }
         }
     }
 }
