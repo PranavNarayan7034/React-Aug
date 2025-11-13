@@ -4,12 +4,28 @@ import './index.css'
 import App from './App.jsx'
 import { Provider } from 'react-redux'
 import { store } from './redux/store.js'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import CartPage from './componets/pages/CartPage.jsx'
+import Aboutpage from './componets/pages/Aboutpage.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     
     <Provider store={store}>
-      <App />
+
+      <BrowserRouter>
+        <Routes>
+          <Route path='/'
+            element={<App />}></Route>
+          <Route path='/cart'
+            element={<CartPage />}></Route>
+          <Route path='/about'
+            element={<Aboutpage />}></Route>
+        </Routes>
+      </BrowserRouter>
+
+
+      
     </Provider>
 
   </StrictMode>,

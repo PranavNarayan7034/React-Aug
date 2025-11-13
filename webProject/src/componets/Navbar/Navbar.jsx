@@ -2,11 +2,12 @@ import logo from "../../assets/logo.svg"
 import { IoSearchOutline } from "react-icons/io5";
 import { FiUser } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
-import { FaBars } from "react-icons/fa6";
+import { FaBars, FaCartShopping } from "react-icons/fa6";
 import { MdOutlineDarkMode, MdLightMode } from "react-icons/md";
 import './Navbar.scss'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { ThemeContext } from "../../Context/ThemeContext";
 
@@ -20,8 +21,8 @@ const Navbar = () => {
                 <img src={logo} alt="" />
             </div>
             <div className="navlinks">
-                <span>Home</span>
-                <span>AboutUs</span>
+                <Link to="/" className="link">Home</Link>
+                <Link to="/about" className="link">AboutUs</Link>
                 <div className="dropdown"
                     onMouseEnter={() => setDropdown(true)}
                     onMouseLeave={() => setDropdown(false)}>
@@ -49,8 +50,11 @@ const Navbar = () => {
             <div className="auth">
                 <IoSearchOutline />
                 <p> <FiUser /> Account</p>
+
+                <Link to="/cart"><FaCartShopping className="carticon" /></Link>
+
                 <span onClick={toggleTheme}>{theme == 'light' ? <MdOutlineDarkMode className="icon" /> :
-                    <MdLightMode className="icon"/>}</span>
+                    <MdLightMode className="icon" />}</span>
             </div>
             <div className="hamburger">
                 <FaBars className="icon" />

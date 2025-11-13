@@ -32,7 +32,9 @@
         @include respond(md) {
             display: none;
         }
-        span {
+        span, .link {
+            text-decoration: none;
+            color: black;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -80,6 +82,9 @@
 
         .icon {
             font-size: 25px;
+        }
+        .carticon{
+            font-size: 30px;
         }
     }
 
