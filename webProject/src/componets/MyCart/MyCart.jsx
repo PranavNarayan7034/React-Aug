@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux'
 import Products from '../../Data/Product'
+import './MyCart.scss'
+
 const MyCart = () => {
     const {cartItems,cartCount} = useSelector( (state)=> state.Cart)
-    // console.log("Cart itmes in Cart page==", cartItems
     const cart = cartItems.map(item => {
         const product = Products.find(prod => prod.id === item.id)
         return {
@@ -12,11 +13,16 @@ const MyCart = () => {
     console.log(cart)
     if (cartCount == 0) {
         return (
-            <h2>Your Cart is Empty</h2>
+            <div className="emptycart">
+                <h2>Your Cart Is Empty</h2>
+                <button className='button'>
+                    Purchase Now
+                </button>
+            </div>
         )
     }
     return (
-        <div>
+        <div className='cartpage'>
             <h2>Your Cart</h2>
             <table>
                 <thead>
@@ -31,11 +37,12 @@ const MyCart = () => {
                 <tbody>
                     {cart.map((item,index) => (
                         <tr key={index}>
-                            <td><img src={item.image} alt=""/></td>
+                            <td><img src={item.image}
+                                alt="" /></td>
                             <td>{item.name}</td>
                             <td>{item.count}</td>
-                            <td>{item.price}</td>
-                            <td>{item.offerPrice}</td>
+                            <td>₹ {item.price}</td>
+                            <td>₹ {item.offerPrice}</td>
                         </tr>
                     ) )}
                 </tbody>

@@ -15,7 +15,8 @@
     h1 {
         @include mainHeading(black);
         font-size: 45px;
-        span{
+
+        span {
             @include font-momosignature;
         }
     }
@@ -23,15 +24,15 @@
     .options {
         width: 100%;
         display: flex;
-        flex-wrap: wrap-reverse; 
         justify-content: space-around;
-
+        flex-wrap:wrap-reverse ;
         span {
             padding: 5px;
             @include font-nunito;
             font-weight: 600;
             font-size: 18px;
-            cursor:default;
+            cursor: default;
+
             &.active {
                 background-color: rgba(0, 0, 0, 0.26);
                 border-radius: 15px;
@@ -39,9 +40,32 @@
             }
         }
     }
-    .products{
-        display: grid;
-        grid-template-columns: repeat(4,auto);
+
+    .products {
+        display: flex;
         gap: 2rem;
+
+        .product-grid {
+            display: grid;
+            grid-template-columns:repeat(4, minmax(220px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+
+            @include respond(xxl) {
+                grid-template-columns: repeat(3, minmax(220px, 1fr));
+            }
+
+            @include respond(xl) {
+                grid-template-columns: repeat(2, minmax(220px, 1fr));
+            }
+
+            @include respond(md) {
+                grid-template-columns: repeat(1, minmax(220px, 1fr));
+            }
+        }
+
+        .card {
+            width: 25%;
+        }
     }
 }
