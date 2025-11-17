@@ -110,9 +110,14 @@
                     &.total{
                         text-align: right;
                     }
-                    &button{
+                    button{
+                        @include font-nunito;
                         background-color: orange;
+                        padding: 8px 15px;
+                        font-size: 18px;
+                        border: none;
                     }
+
                 }
 
                 &:last-child {

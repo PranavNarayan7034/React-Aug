@@ -4,6 +4,7 @@ import './MyCart.scss'
 import { HashLink } from 'react-router-hash-link'
 import { useDispatch } from 'react-redux'
 import { incrementCount,decrementCount } from '../../redux/cartReducer'
+import { useMemo } from 'react'
 
 const MyCart = () => {
     const dispatch = useDispatch()
@@ -12,6 +13,19 @@ const MyCart = () => {
         const product = Products.find(prod => prod.id === item.id)
         return { ...product, count: item.count }
     })
+
+
+    // const totalActualPrice = cart.reduce((x,y)=> x+ y.price * y.count, 0 )
+    // const totalOfferPrice = cart.reduce((x,y)=> x+ y.offerPrice * y.count, 0 )
+
+    const totalActualPrice = useMemo(() => {
+        return cart.reduce((x,y)=> x+ y.price * y.count, 0 )
+    }, [cart])
+    
+    const totalOfferPrice = useMemo(() => {
+        return cart.reduce((x,y)=> x+ y.offerPrice * y.count, 0 )
+    },[cart])
+
     if (cartCount == 0) {
         return (
             <div className="emptycart">
@@ -62,6 +76,17 @@ const MyCart = () => {
                             <td>remove ❌</td>
                         </tr>
                     ))}
+                    <tr>
+                        <td colSpan="3"></td>
+                        <td>Total Actual Price: ₹ {totalActualPrice}</td>
+                        <td>Total Offer Price: ₹ {totalOfferPrice}</td>
+                        <td>You Saved: ₹ {totalActualPrice - totalOfferPrice}</td>
+                    </tr>
+                    <tr>
+                        <td colSpan="3"></td>
+                        <td><button>Add Coupon</button></td>
+                        <td><button>Buy Now</button></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
