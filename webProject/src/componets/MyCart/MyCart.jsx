@@ -4,19 +4,26 @@ import './MyCart.scss'
 import { HashLink } from 'react-router-hash-link'
 import { useDispatch } from 'react-redux'
 import { incrementCount,decrementCount } from '../../redux/cartReducer'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
+import Popup from '../Popup/Popup'
 
 const MyCart = () => {
+    
     const dispatch = useDispatch()
+    const [popupPage, setPopupPage] = useState(false)
+    const [removeItem,setRemoveItem] = useState(null)
+
     const { cartItems, cartCount } = useSelector((state) => state.Cart)
-    const cart = cartItems.map(item => {
-        const product = Products.find(prod => prod.id === item.id)
+    const cart = cartItems.map(item => {const product = Products.find(prod => prod.id === item.id)
         return { ...product, count: item.count }
     })
 
+    const onRemove = (item) => {
+        setPopupPage(true);
+        setRemoveItem(item)
+    }
 
-    // const totalActualPrice = cart.reduce((x,y)=> x+ y.price * y.count, 0 )
-    // const totalOfferPrice = cart.reduce((x,y)=> x+ y.offerPrice * y.count, 0 )
+    console.log("Remove Item ==", removeItem)
 
     const totalActualPrice = useMemo(() => {
         return cart.reduce((x,y)=> x+ y.price * y.count, 0 )
@@ -37,6 +44,7 @@ const MyCart = () => {
             </div>
         )
     }
+
     return (
         <div className='cartpage'>
             <h2>Your Cart</h2>
@@ -73,7 +81,7 @@ const MyCart = () => {
 
                             <td>₹ {item.price * item.count}</td>
                             <td>₹ {item.offerPrice * item.count}</td>
-                            <td>remove ❌</td>
+                            <td onClick={()=>onRemove(item.id)}>remove ❌</td>
                         </tr>
                     ))}
                     <tr>
@@ -89,6 +97,8 @@ const MyCart = () => {
                     </tr>
                 </tbody>
             </table>
+            {popupPage && <Popup close={() => setPopupPage(false)}
+                removeitem={removeItem} />}
         </div>
     )
 }
