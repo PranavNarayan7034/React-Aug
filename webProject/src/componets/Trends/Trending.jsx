@@ -3,8 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './Trending.scss';
 import ProductCard from '../ProductCard/ProductCard';
 import Products from '../../Data/Product';
+import { useNavigate } from 'react-router-dom';
 
 const Trending = () => {
+  const navigate = useNavigate()
+
   const [selectedCategory, setSelectedCategory] = useState('New arrivals');
   const Categories = [
     "New arrivals",
@@ -47,13 +50,14 @@ const Trending = () => {
             className="product-grid"
           >
             {filteredProducts.map((item, index) => (
-              <motion.div
+              <motion.div 
+                onClick={()=> navigate(`/product/${item.name}`)}
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
               >
-                <ProductCard
+                <ProductCard 
                   id={item.id}
                   name={item.name}
                   image={item.image}

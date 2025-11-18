@@ -23,8 +23,6 @@ const MyCart = () => {
         setRemoveItem(item)
     }
 
-    console.log("Remove Item ==", removeItem)
-
     const totalActualPrice = useMemo(() => {
         return cart.reduce((x,y)=> x+ y.price * y.count, 0 )
     }, [cart])
@@ -81,7 +79,7 @@ const MyCart = () => {
 
                             <td>₹ {item.price * item.count}</td>
                             <td>₹ {item.offerPrice * item.count}</td>
-                            <td onClick={()=>onRemove(item.id)}>remove ❌</td>
+                            <td onClick={()=>onRemove(item.id)} className='remove'>remove ❌</td>
                         </tr>
                     ))}
                     <tr>

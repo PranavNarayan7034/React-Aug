@@ -76,6 +76,9 @@
                     font-size: 18px;
                     color: #333;
                     height: auto;
+                    &.remove{
+                        cursor: pointer;
+                    }
                     &.count{
                         .btns{
                             display: flex;
