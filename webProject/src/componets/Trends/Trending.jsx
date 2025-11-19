@@ -3,11 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './Trending.scss';
 import ProductCard from '../ProductCard/ProductCard';
 import Products from '../../Data/Product';
-import { useNavigate } from 'react-router-dom';
 
 const Trending = () => {
-  const navigate = useNavigate()
-
+  
   const [selectedCategory, setSelectedCategory] = useState('New arrivals');
   const Categories = [
     "New arrivals",
