@@ -8,7 +8,7 @@ const DynamicProduct = () => {
   return (
       <ThemeProvider>
           <Navbar />
-
+          
           <Productinfo/>
           
       </ThemeProvider>

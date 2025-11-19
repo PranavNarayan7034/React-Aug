@@ -28,7 +28,7 @@ const ProductCard = ({id, name, image, Offerprice, Actualprice }) => {
             <div className='imgbox'
                 onClick={()=> navigate(`/product/${name}`)}
             >
-                    <img src={image} alt="" />
+                    <img src={image[0]} alt="" />
                 </div>
                 <div className='info'>
                     <p>{name}</p>

@@ -78,10 +78,10 @@
     text-transform: uppercase;
 }
 
-@mixin Button{
+@mixin Button($bg:orange){
     @include font-nunito(600);
     color: white;
-    background-color: orange;
+    background-color: $bg;
     padding: 8px 15px;
     border: none;
     border-radius: 5px;
