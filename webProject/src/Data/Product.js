@@ -51,7 +51,7 @@ const Products = [
     description: "A premium cotton twill baseball cap designed for everyday comfort and protection. The adjustable strap ensures a perfect fit for all head sizes. Ideal for sports, outdoor activities, or casual fashion styling.",
     price: 799,
     offerPrice: 499,
-    image: [Caps],
+    image: [Caps,Caps,Caps,Caps],
     category: "New arrivals",
     date: Date.now(),
     __v: 0

@@ -60,7 +60,7 @@ const MyCart = () => {
                 <tbody>
                     {cart.map((item, index) => (
                         <tr key={index}>
-                            <td><img src={item.image}alt="" /></td>
+                            <td><img src={item.image[0]}alt="" /></td>
                             <td>{item.name}</td>
 
                             <td className='count'>
